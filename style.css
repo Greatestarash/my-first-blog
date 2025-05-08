@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth; /* Add smooth scrolling */
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #1a1a1a; /* Dark background color */
@@ -31,66 +35,70 @@ body {
 
 .header-content {
     display: flex;
-    justify-content: space-between; /* Push logo to one side, actions to the other */
+    justify-content: space-between; /* Push logo to one side, nav and actions to the other */
     align-items: center;
+    flex-wrap: wrap; /* Allow header content to wrap on smaller screens */
+    gap: 20px; /* Add gap between flex items */
 }
 
 .logo {
     font-size: 1.5em;
     font-weight: bold;
     color: #ffffff;
+    /* Prevents shrinking */
+    flex-shrink: 0;
+}
+
+.main-nav {
+    /* Allows nav to grow and take space, but prevents shrinking below content size */
+    flex-grow: 1;
+    flex-shrink: 0;
+    /* Center the navigation links */
+    display: flex;
+    justify-content: center;
 }
 
 .main-nav ul {
     list-style: none;
-    display: flex;
+    display: flex; /* Arrange list items horizontally */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    flex-wrap: wrap; /* Allow nav links to wrap */
+    justify-content: center; /* Center links if they wrap */
 }
 
 .main-nav ul li {
-    margin-left: 20px;
+    margin: 0 10px; /* Space between navigation items */
 }
 
 .main-nav a {
     color: #ffffff;
     text-decoration: none;
     font-weight: 600;
-}
-
-/* Styles for the header actions group */
-.header-actions {
-    display: flex;
-    align-items: center;
-    gap: 20px; /* Space between language switcher and button */
-}
-
-/* Language Switcher Styling */
-.language-switcher {
-    display: flex;
-    gap: 10px; /* Space between language links */
-}
-
-.language-switcher .lang-link {
-    color: #ffffff; /* White text for links */
-    text-decoration: none;
-    font-size: 0.9em;
-    font-weight: 600;
-    padding: 5px 8px;
-    border-radius: 4px;
+    padding: 5px 8px; /* Add padding for clickable area */
+    border-radius: 4px; /* Optional: slight rounded corners */
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.language-switcher .lang-link:hover {
-    background-color: #ffc107; /* Yellow background on hover */
-    color: #1a1a1a; /* Dark text on hover */
+.main-nav a:hover,
+.main-nav a.active {
+    background-color: #ffc107; /* Yellow background on hover/active */
+    color: #1a1a1a; /* Dark text on hover/active */
 }
 
-/* Style the active language link (optional, requires logic to add 'active' class) */
-/*
-.language-switcher .lang-link.active {
-    background-color: #ffc107;
-    color: #1a1a1a;
+/* Style for the language links specifically */
+.main-nav .lang-link {
+    font-size: 0.9em; /* Make language links slightly smaller */
 }
-*/
+
+
+/* Styles for the header actions group (button) */
+.header-actions {
+    display: flex;
+    align-items: center;
+    /* Prevents shrinking */
+    flex-shrink: 0;
+}
 
 
 /* Button Styling */
@@ -152,6 +160,8 @@ body {
 .hero-image img {
     max-width: 100%; /* Ensure image is responsive */
     height: auto;
+    display: block; /* Added to prevent extra space below image */
+    margin: 0 auto; /* Center the image within its container */
 }
 
 /* Testimonial Section Styling */
@@ -190,17 +200,79 @@ body {
 .testimonial-info ul {
     list-style: none;
     margin-bottom: 30px;
+    padding: 0; /* Remove default list padding */
 }
 
 .testimonial-info li {
     margin-bottom: 10px;
     color: #cccccc;
+    position: relative; /* Needed for custom bullet point */
+    padding-left: 20px; /* Make space for custom bullet */
 }
 
-.testimonial-info li &check; {
-    margin-right: 10px;
-    color: #ffc107; /* Yellow checkmark */
+/* Style for custom checkmark bullet */
+.testimonial-info li::before {
+    content: "\2713"; /* Unicode checkmark */
+    color: #ffc107; /* Yellow color */
     font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+
+/* About Section Styling (New) */
+.about-section {
+    padding: 80px 0;
+    background-color: #1a1a1a; /* Dark background */
+    text-align: center; /* Center heading */
+}
+
+.about-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.about-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+.about-text {
+    flex: 2; /* Allow text to take more space */
+    min-width: 300px;
+    text-align: left; /* Align text within its container */
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    color: #cccccc;
+}
+
+.about-metrics {
+    display: flex;
+    justify-content: space-around; /* Distribute metrics horizontally */
+    margin-top: 30px;
+    flex-wrap: wrap; /* Allow metrics to wrap */
+    gap: 20px; /* Space between metrics */
+}
+
+.metric-item {
+    text-align: center;
+}
+
+.metric-number {
+    font-size: 2em;
+    font-weight: bold;
+    color: #ffc107; /* Yellow color */
+    margin-bottom: 5px;
+}
+
+.metric-label {
+    font-size: 0.9em;
+    color: #cccccc;
 }
 
 
@@ -226,16 +298,23 @@ body {
     color: #cccccc;
 }
 
+/* Samuel's photo is now part of the about-section */
+/*
 .samuel-photo img {
-    max-width: 250px; /* Adjust size as needed */
-    border-radius: 10px; /* Optional: slightly rounded corners */
+    max-width: 250px;
+    border-radius: 10px;
     margin-bottom: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
+*/
 
 .trading-cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
     gap: 20px; /* Space between cards */
+    padding: 0 10px; /* Add slight padding to prevent cards touching edges on small screens */
 }
 
 .trading-card {
@@ -244,13 +323,15 @@ body {
     border-radius: 10px;
     overflow: hidden; /* Hide parts of overlay outside the card */
     text-align: left;
-    padding: 20px; /* Adjust padding as needed */
+    display: flex; /* Use flex to arrange content inside card */
+    flex-direction: column; /* Stack content vertically */
 }
 
 .trading-card img {
     display: block;
     width: 100%;
     height: auto;
+    /* object-fit: cover; */ /* Optional: uncomment if you want images to cover the area without distortion */
     opacity: 0.8; /* Slightly dim the background image */
 }
 
@@ -266,10 +347,12 @@ body {
     flex-direction: column;
     justify-content: flex-end; /* Align text to the bottom */
     background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%); /* Gradient overlay */
+    z-index: 1; /* Ensure overlay is above the image */
 }
 
 .card-overlay p {
     margin-bottom: 5px;
+    z-index: 2; /* Ensure text is above the overlay background */
 }
 
 .card-overlay .pair {
@@ -296,16 +379,86 @@ body {
 }
 
 
+/* Tools Section Styling (New) */
+.tools-section {
+    padding: 80px 0;
+    background-color: #282828; /* Slightly lighter dark background */
+    text-align: center; /* Center heading */
+}
+
+.tools-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid for tools */
+    gap: 30px; /* Space between tool items */
+}
+
+.tool-item {
+    text-align: center;
+    background-color: #1a1a1a; /* Dark background for tool item */
+    padding: 30px 20px;
+    border-radius: 10px;
+}
+
+.tool-icon {
+    font-size: 3em;
+    color: #ffc107; /* Yellow color for icons */
+    margin-bottom: 15px;
+}
+
+.tool-item h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.tool-item p {
+    font-size: 0.9em;
+    color: #cccccc;
+}
+
+
 /* Difference Section Styling */
 .difference-section {
     padding: 80px 0;
-    background-color: #282828; /* Slightly lighter dark background */
+    background-color: #1a1a1a; /* Dark background */
     text-align: center;
 }
 
 .difference-section h2 {
     font-size: 2.5em;
     margin-bottom: 20px;
+}
+
+/* --- Add content for the difference section here --- */
+.difference-section .container {
+    /* Add styles for the content you put inside this container */
+}
+
+
+/* Call To Action Section Styling (New) */
+.call-to-action-section {
+    padding: 80px 0;
+    background-color: #282828; /* Slightly lighter dark background */
+    text-align: center; /* Center content */
+}
+
+.call-to-action-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.call-to-action-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #cccccc;
+}
+
+.cta-btn {
+    /* Inherits .btn styling */
 }
 
 
@@ -319,7 +472,7 @@ footer {
 }
 
 
-/* Responsive adjustments (basic example) */
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column;
@@ -330,14 +483,29 @@ footer {
     .header-actions {
         flex-direction: column-reverse; /* Put language switcher above the button */
         gap: 10px; /* Reduce gap */
+        width: 100%; /* Allow actions to take full width */
+        align-items: center; /* Center items vertically in column */
     }
 
-    .language-switcher {
-        justify-content: center; /* Center language links */
+     .main-nav {
+         width: 100%; /* Allow nav to take full width */
+         justify-content: center; /* Center nav links */
+         margin-bottom: 15px; /* Space below nav */
+     }
+
+    .main-nav ul {
+        flex-direction: column; /* Stack nav items vertically on small screens */
+        align-items: center; /* Center stacked items */
     }
+
+    .main-nav ul li {
+        margin: 5px 0; /* Adjust margin for stacked items */
+    }
+
 
     .hero-content,
-    .testimonial-content {
+    .testimonial-content,
+    .about-content { /* Also apply to about content */
         flex-direction: column;
         text-align: center;
     }
@@ -345,12 +513,74 @@ footer {
     .hero-text,
     .hero-image,
     .testimonial-quote,
-    .testimonial-info {
+    .testimonial-info,
+    .about-text { /* Also apply to about text */
         min-width: unset; /* Remove minimum width constraint on smaller screens */
         width: 100%;
+        text-align: center; /* Center text on smaller screens */
     }
 
      .samuel-photo img {
          max-width: 150px; /* Make photo smaller on mobile */
      }
+
+     .about-metrics {
+         justify-content: center; /* Center metrics on smaller screens */
+     }
+
+
+     .trading-cards-grid {
+         padding: 0; /* Remove padding on very small screens if needed */
+     }
+
+     .trading-card {
+         padding: 15px; /* Reduce card padding on small screens */
+     }
+
+     .card-overlay {
+         padding: 15px; /* Match overlay padding */
+     }
+
+      .hero-text h1 {
+          font-size: 2em; /* Reduce font size on smaller screens */
+      }
+
+       .testimonial-quote h2 {
+           font-size: 1.8em; /* Reduce font size on smaller screens */
+       }
+
+       .tools-grid {
+           gap: 20px; /* Adjust tool grid gap */
+       }
+}
+
+/* Specific adjustments for RTL in Farsi */
+html[direction="rtl"] .hero-text,
+html[direction="rtl"] .about-text,
+html[direction="rtl"] .testimonial-info,
+html[direction="rtl"] .testimonial-quote {
+    text-align: right; /* Ensure text alignment is correct for RTL */
+}
+
+html[direction="rtl"] .testimonial-info li {
+    padding-left: 0;
+    padding-right: 20px; /* Adjust padding for RTL checklist */
+}
+
+html[direction="rtl"] .testimonial-info li::before {
+     left: unset;
+     right: 0; /* Position the checkmark on the right for RTL */
+}
+
+html[direction="rtl"] .samuel-photo img {
+    margin-left: auto; /* Center image in RTL */
+    margin-right: auto; /* Center image in RTL */
+}
+
+html[direction="rtl"] .about-metrics {
+    justify-content: center; /* Center metrics in RTL */
+}
+
+html[direction="rtl"] .tools-grid {
+     /* Adjust if tool icons/text need specific RTL layout */
 }

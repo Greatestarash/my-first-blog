@@ -1,0 +1,309 @@
+/* Basic Reset and Body Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1a1a1a; /* Dark background color */
+    color: #ffffff; /* White text color */
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px; /* Add some padding on smaller screens */
+}
+
+/* Header Styling */
+.site-header {
+    background-color: #1a1a1a;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure header stays on top */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 20px;
+}
+
+.main-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    background-color: #ffc107; /* Yellow button color */
+    color: #1a1a1a; /* Dark text on button */
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ffda6a; /* Lighter yellow on hover */
+}
+
+/* Hero Section Styling */
+.hero-section {
+    padding: 80px 0;
+    background-color: #1a1a1a; /* Match header background */
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* Space between text and image */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.hero-text {
+    flex: 1; /* Take up available space */
+    min-width: 300px; /* Ensure text doesn't get too small */
+}
+
+.hero-text h1 {
+    font-size: 3em;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.hero-text .highlight {
+    color: #ffc107; /* Yellow for highlight */
+}
+
+.hero-text p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #cccccc; /* Lighter text color */
+}
+
+.hero-image {
+    flex: 1; /* Take up available space */
+    min-width: 300px; /* Ensure image doesn't get too small */
+    text-align: center; /* Center image if smaller than container */
+}
+
+.hero-image img {
+    max-width: 100%; /* Ensure image is responsive */
+    height: auto;
+}
+
+/* Testimonial Section Styling */
+.testimonial-section {
+    background-color: #282828; /* Slightly lighter dark background */
+    padding: 80px 0;
+}
+
+.testimonial-content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start; /* Align items to the top */
+    flex-wrap: wrap;
+}
+
+.testimonial-quote {
+    flex: 1;
+    min-width: 300px;
+}
+
+.testimonial-quote h2 {
+    font-size: 2.5em;
+    line-height: 1.3;
+}
+
+.testimonial-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.testimonial-info h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.testimonial-info ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.testimonial-info li {
+    margin-bottom: 10px;
+    color: #cccccc;
+}
+
+.testimonial-info li &check; {
+    margin-right: 10px;
+    color: #ffc107; /* Yellow checkmark */
+    font-weight: bold;
+}
+
+
+/* Results Section Styling */
+.results-section {
+    padding: 80px 0;
+    background-color: #1a1a1a; /* Dark background */
+    text-align: center; /* Center headings and photo */
+}
+
+.results-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+.results-section .highlight {
+     color: #ffc107; /* Yellow for highlight */
+}
+
+.quote-attribution {
+    font-style: italic;
+    margin-bottom: 40px;
+    color: #cccccc;
+}
+
+.samuel-photo img {
+    max-width: 250px; /* Adjust size as needed */
+    border-radius: 10px; /* Optional: slightly rounded corners */
+    margin-bottom: 40px;
+}
+
+.trading-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between cards */
+}
+
+.trading-card {
+    position: relative; /* Needed for absolute positioning of overlay */
+    background-color: #282828; /* Card background */
+    border-radius: 10px;
+    overflow: hidden; /* Hide parts of overlay outside the card */
+    text-align: left;
+    padding: 20px; /* Adjust padding as needed */
+}
+
+.trading-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    opacity: 0.8; /* Slightly dim the background image */
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Align text to the bottom */
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%); /* Gradient overlay */
+}
+
+.card-overlay p {
+    margin-bottom: 5px;
+}
+
+.card-overlay .pair {
+    font-size: 1em;
+    font-weight: 600;
+    color: #cccccc;
+}
+
+.card-overlay .gain {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #4CAF50; /* Green color for gain */
+}
+
+.card-overlay .details {
+    font-size: 0.9em;
+    color: #cccccc;
+}
+
+.card-overlay .platform {
+    font-size: 0.8em;
+    color: #aaaaaa;
+    margin-top: 10px;
+}
+
+
+/* Difference Section Styling */
+.difference-section {
+    padding: 80px 0;
+    background-color: #282828; /* Slightly lighter dark background */
+    text-align: center;
+}
+
+.difference-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+
+/* Footer Styling (Example) */
+footer {
+    background-color: #111;
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.9em;
+}
+
+
+/* Responsive adjustments (basic example) */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero-content,
+    .testimonial-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text,
+    .hero-image,
+    .testimonial-quote,
+    .testimonial-info {
+        min-width: unset; /* Remove minimum width constraint on smaller screens */
+        width: 100%;
+    }
+
+     .samuel-photo img {
+         max-width: 150px; /* Make photo smaller on mobile */
+     }
+}

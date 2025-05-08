@@ -6,7 +6,7 @@
     <title>Supertrend</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> </head>
 <body>
 
     <header class="site-header">
@@ -21,12 +21,19 @@
                         <li><a href="#about" class="nav-link">About</a></li>
                         <li><a href="#tools" class="nav-link">Tools</a></li>
                         <li><a href="#call" class="nav-link">Call</a></li>
-                        <li><a href="index.html" class="lang-link active">EN</a></li>
-                        <li><a href="index-de.html" class="lang-link">DE</a></li>
-                        <li><a href="index-fa.html" class="lang-link">FA</a></li>
                     </ul>
                 </nav>
                 <div class="header-actions">
+                    <div class="dropdown language-dropdown">
+                        <button class="dropdown-toggle"><i class="fas fa-globe"></i> <span id="current-language">EN</span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html" class="lang-link active" data-lang="en">English</a></li>
+                            <li><a href="index-de.html" class="lang-link" data-lang="de">Deutsch</a></li>
+                            <li><a href="index-fa.html" class="lang-link" data-lang="fa">فارسی</a></li>
+                        </ul>
+                    </div>
+                     <button id="theme-toggle" class="theme-toggle"><i class="fas fa-sun"></i></button>
+
                      <a href="#" class="btn header-btn">Arrange 1:1 Training with Samuel &rarr;</a>
                 </div>
             </div>
@@ -221,19 +228,19 @@
              <h2>The 4 Tools That Turn Guessing Into Strategy</h2>
              <div class="tools-grid">
                  <div class="tool-item">
-                     <div class="tool-icon">&curren;</div> <h3>Market Entry Timing</h3>
+                     <div class="tool-icon"><i class="fas fa-bolt"></i></div> <h3>Market Entry Timing</h3>
                      <p>Spot the ideal entry with trend analysis</p>
                  </div>
                  <div class="tool-item">
-                     <div class="tool-icon">&#128274;</div> <h3>Risk Management</h3>
+                     <div class="tool-icon"><i class="fas fa-lock"></i></div> <h3>Risk Management</h3>
                      <p>Know exactly where to place your stops</p>
                  </div>
                   <div class="tool-item">
-                     <div class="tool-icon">&#8620;</div> <h3>Exit Precision</h3>
+                     <div class="tool-icon"><i class="fas fa-arrow-right-to-bracket"></i></div> <h3>Exit Precision</h3>
                      <p>Lock in profits and avoid emotional exits</p>
                  </div>
                   <div class="tool-item">
-                     <div class="tool-icon">&#128269;</div> <h3>Opportunity Scanner</h3>
+                     <div class="tool-icon"><i class="fas fa-search"></i></div> <h3>Opportunity Scanner</h3>
                      <p>Find trades with high potential—before the crowd does</p>
                  </div>
              </div>
@@ -258,5 +265,5 @@
     <footer>
         </footer>
 
-</body>
+    <script src="script.js"></script> </body>
 </html>

@@ -6,7 +6,7 @@
     <title>Supertrend</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> </head>
 <body>
 
     <header class="site-header">
@@ -22,12 +22,13 @@
                         <li><a href="#tools" class="nav-link">Tools</a></li>
                          <li><a href="#call" class="nav-link">Anrufen</a></li>
                         <li><a href="index.html" class="lang-link">EN</a></li>
-                        <li><a href="index-de.html" class="lang-link active">DE</a></li>
-                        <li><a href="index-fa.html" class="lang-link">FA</a></li>
+                        <li><a href="index-de.html" class="lang-link active" data-lang="de">Deutsch</a></li>
+                        <li><a href="index-fa.html" class="lang-link" data-lang="fa">فارسی</a></li>
                     </ul>
                 </nav>
                 <div class="header-actions">
                      <a href="#" class="btn header-btn">1:1 Training mit Samuel vereinbaren &rarr;</a>
+                    <button id="theme-toggle" class="theme-toggle"><i class="fas fa-sun"></i></button>
                 </div>
             </div>
         </div>
@@ -222,19 +223,19 @@
              <h2>Die 4 Tools, die Raten in Strategie verwandeln</h2>
              <div class="tools-grid">
                  <div class="tool-item">
-                     <div class="tool-icon">&curren;</div> <h3>Markteintritts-Timing</h3>
+                     <div class="tool-icon"><i class="fas fa-bolt"></i></div> <h3>Markteintritts-Timing</h3>
                      <p>Identifiziere den idealen Einstieg durch Trendanalyse</p>
                  </div>
                  <div class="tool-item">
-                     <div class="tool-icon">&#128274;</div> <h3>Risikomanagement</h3>
+                     <div class="tool-icon"><i class="fas fa-lock"></i></div> <h3>Risikomanagement</h3>
                      <p>Weiß genau, wo du deine Stopps setzen musst</p>
                  </div>
                   <div class="tool-item">
-                     <div class="tool-icon">&#8620;</div> <h3>Ausstiegspräzision</h3>
+                     <div class="tool-icon"><i class="fas fa-arrow-right-to-bracket"></i></div> <h3>Ausstiegspräzision</h3>
                      <p>Sichere Gewinne und vermeide emotionale Ausstiege</p>
                  </div>
                   <div class="tool-item">
-                     <div class="tool-icon">&#128269;</div> <h3>Chancen-Scanner</h3>
+                     <div class="tool-icon"><i class="fas fa-search"></i></div> <h3>Chancen-Scanner</h3>
                      <p>Finde Trades mit hohem Potenzial – bevor es die Masse tut</p>
                  </div>
              </div>
@@ -259,5 +260,5 @@
     <footer>
         </footer>
 
-</body>
+    <script src="script.js"></script> </body>
 </html>

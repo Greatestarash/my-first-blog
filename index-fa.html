@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+k<!DOCTYPE html>
 <html lang="fa" direction="rtl">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +6,7 @@
     <title>Supertrend</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> </head>
 <body>
 
     <header class="site-header">
@@ -23,11 +23,12 @@
                          <li><a href="#call" class="nav-link">تماس</a></li>
                         <li><a href="index.html" class="lang-link">EN</a></li>
                         <li><a href="index-de.html" class="lang-link">DE</a></li>
-                        <li><a href="index-fa.html" class="lang-link active">FA</a></li>
+                        <li><a href="index-fa.html" class="lang-link active" data-lang="fa">فارسی</a></li>
                     </ul>
                 </nav>
                 <div class="header-actions">
                      <a href="#" class="btn header-btn">هماهنگی آموزش ۱ به ۱ با ساموئل &rarr;</a>
+                     <button id="theme-toggle" class="theme-toggle"><i class="fas fa-sun"></i></button>
                 </div>
             </div>
         </div>
@@ -103,7 +104,7 @@
     <section class="results-section">
         <div class="container">
             <h2>دستورالعمل موفقیت برای <span class="highlight">معامله مبتنی بر داده</span></h2>
-            <p class="quote-attribution" style="direction: rtl; text-align: center;">"افرادی هستند که مهم نیست چه چیزی به آنها نشان دهید یا چه چیزی بگویید، هرگز به چرخه ها باور نخواهند داشت.<br>برای کسانی از ما که باور داریم، به این عدم باور نیاز داریم تا در مقابل آن معامله کنیم. - مارتین آرمسترانگ"</p>
+            <p class="quote-attribution" style="direction: rtl; text-align: center;">"There are those who no matter what you show them or what you say, they will never believe in cycles.<br>For those of us who do, we need that disbelief to trade against. - Martin Armstrong"</p>
 
             <div class="trading-cards-grid">
                 <div class="trading-card">
@@ -223,19 +224,19 @@
              <h2>4 ابزاری که حدس زدن را به استراتژی تبدیل می‌کنند</h2>
              <div class="tools-grid">
                  <div class="tool-item">
-                     <div class="tool-icon">&curren;</div> <h3>زمان‌بندی ورود به بازار</h3>
+                     <div class="tool-icon"><i class="fas fa-bolt"></i></div> <h3>زمان‌بندی ورود به بازار</h3>
                      <p>نقطه ورود ایده‌آل را با تحلیل روند تشخیص دهید</p>
                  </div>
                  <div class="tool-item">
-                     <div class="tool-icon">&#128274;</div> <h3>مدیریت ریسک</h3>
+                     <div class="tool-icon"><i class="fas fa-lock"></i></div> <h3>مدیریت ریسک</h3>
                      <p>دقیقاً بدانید کجا حد ضررهای خود را قرار دهید</p>
                  </div>
                   <div class="tool-item">
-                     <div class="tool-icon">&#8620;</div> <h3>دقت خروج</h3>
+                     <div class="tool-icon"><i class="fas fa-arrow-right-to-bracket"></i></div> <h3>دقت خروج</h3>
                      <p>سودها را قفل کرده و از خروج‌های احساسی خودداری کنید</p>
                  </div>
                   <div class="tool-item">
-                     <div class="tool-icon">&#128269;</div> <h3>اسکنر فرصت</h3>
+                     <div class="tool-icon"><i class="fas fa-search"></i></div> <h3>اسکنر فرصت</h3>
                      <p>معاملات با پتانسیل بالا را پیدا کنید – قبل از اینکه عموم مردم این کار را انجام دهند</p>
                  </div>
              </div>
@@ -261,5 +262,5 @@
     <footer>
         </footer>
 
-</body>
+    <script src="script.js"></script> </body>
 </html>

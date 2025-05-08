@@ -31,7 +31,7 @@ body {
 
 .header-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Push logo to one side, actions to the other */
     align-items: center;
 }
 
@@ -55,6 +55,43 @@ body {
     text-decoration: none;
     font-weight: 600;
 }
+
+/* Styles for the header actions group */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between language switcher and button */
+}
+
+/* Language Switcher Styling */
+.language-switcher {
+    display: flex;
+    gap: 10px; /* Space between language links */
+}
+
+.language-switcher .lang-link {
+    color: #ffffff; /* White text for links */
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: 600;
+    padding: 5px 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.language-switcher .lang-link:hover {
+    background-color: #ffc107; /* Yellow background on hover */
+    color: #1a1a1a; /* Dark text on hover */
+}
+
+/* Style the active language link (optional, requires logic to add 'active' class) */
+/*
+.language-switcher .lang-link.active {
+    background-color: #ffc107;
+    color: #1a1a1a;
+}
+*/
+
 
 /* Button Styling */
 .btn {
@@ -287,6 +324,16 @@ footer {
     .header-content {
         flex-direction: column;
         gap: 15px;
+    }
+
+    /* Adjust header actions layout on smaller screens */
+    .header-actions {
+        flex-direction: column-reverse; /* Put language switcher above the button */
+        gap: 10px; /* Reduce gap */
+    }
+
+    .language-switcher {
+        justify-content: center; /* Center language links */
     }
 
     .hero-content,
